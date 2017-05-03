@@ -11,32 +11,37 @@ using System.Windows.Forms;
 
 namespace Fahrplan
 {
-    public partial class Form1 : Form
+    public partial class MainView : Form
     {
         private ITransport testee;
 
-        public Form1() 
+        public MainView() 
         {
             InitializeComponent();
+            testee = new Transport();
         }
 
         public ITransport Testee { get => testee; set => testee = value; }
 
         private void btn_suche_Click(object sender, EventArgs e)
         {
-            Testee = new Transport();
             var connections = Testee.GetConnections(txt_von.Text, txt_nach.Text);
 
-            Connection result = connections.ConnectionList[0];
-            ConnectionPoint from = result.From;
-            ConnectionPoint to = result.To;
+                Connection result = connections.ConnectionList[0];
+                ConnectionPoint from = result.From;
+                ConnectionPoint to = result.To;
+            
+                lsb_resultat.Items.Add(("Von: " + from.Station.Name + "\n"
+                    + " Abfahrt: " + validateDateTime(result.From.Departure) + "\n"
+                    + " Nach: " + to.Station.Name + "\n"
+                    + " Ankunft:" + validateDateTime(result.To.Arrival) + "\n"
+                    + " Länge der Reise " + result.Duration));
 
-            MessageBox.Show("From: " + from.Station.Name + "\n"
-                + "Abfahrt: " + validateDateTime(result.From.Departure) + "\n"
-                + "To: " + to.Station.Name + "\n"
-                + "Ankunft:" + validateDateTime(result.To.Arrival) + "\n"
-                + "Lenght" + result.Duration);
-            Console.WriteLine(result.From.Departure);
+            //foreach (string Departure in Abfahrt)
+           // {
+
+            //}
+            
         }
 
         private String validateDateTime(String time)

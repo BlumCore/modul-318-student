@@ -1,6 +1,6 @@
 ﻿namespace Fahrplan
 {
-    partial class Form1
+    partial class MainView
     {
         /// <summary>
         /// Erforderliche Designervariable.
@@ -37,11 +37,13 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txt_nach = new System.Windows.Forms.TextBox();
             this.txt_von = new System.Windows.Forms.TextBox();
+            this.lsb_resultat = new System.Windows.Forms.ListBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.lsb_resultat);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.btn_suche);
             this.panel1.Controls.Add(this.btn_abfahrtsortsuche);
@@ -52,7 +54,7 @@
             this.panel1.Controls.Add(this.txt_von);
             this.panel1.Location = new System.Drawing.Point(13, 13);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1355, 580);
+            this.panel1.Size = new System.Drawing.Size(1297, 1173);
             this.panel1.TabIndex = 0;
             // 
             // label3
@@ -126,13 +128,22 @@
             this.txt_von.Size = new System.Drawing.Size(790, 31);
             this.txt_von.TabIndex = 0;
             // 
-            // Form1
+            // lsb_resultat
+            // 
+            this.lsb_resultat.FormattingEnabled = true;
+            this.lsb_resultat.ItemHeight = 25;
+            this.lsb_resultat.Location = new System.Drawing.Point(80, 582);
+            this.lsb_resultat.Name = "lsb_resultat";
+            this.lsb_resultat.Size = new System.Drawing.Size(1187, 454);
+            this.lsb_resultat.TabIndex = 8;
+            // 
+            // MainView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1380, 611);
+            this.ClientSize = new System.Drawing.Size(1332, 1217);
             this.Controls.Add(this.panel1);
-            this.Name = "Form1";
+            this.Name = "MainView";
             this.Text = "Form1";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -151,6 +162,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txt_nach;
         private System.Windows.Forms.TextBox txt_von;
+        private System.Windows.Forms.ListBox lsb_resultat;
     }
 }
 
