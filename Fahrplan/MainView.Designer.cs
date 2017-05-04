@@ -133,10 +133,6 @@
             // 
             // txt_von
             // 
-            this.txt_von.AutoCompleteCustomSource.AddRange(new string[] {
-            "Stans"});
-            this.txt_von.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.txt_von.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.txt_von.Location = new System.Drawing.Point(186, 129);
             this.txt_von.Name = "txt_von";
             this.txt_von.Size = new System.Drawing.Size(790, 31);
