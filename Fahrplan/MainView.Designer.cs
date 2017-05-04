@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lsb_resultat = new System.Windows.Forms.ListBox();
             this.label3 = new System.Windows.Forms.Label();
             this.btn_suche = new System.Windows.Forms.Button();
             this.btn_abfahrtsortsuche = new System.Windows.Forms.Button();
@@ -37,7 +38,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txt_nach = new System.Windows.Forms.TextBox();
             this.txt_von = new System.Windows.Forms.TextBox();
-            this.lsb_resultat = new System.Windows.Forms.ListBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -56,6 +56,15 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1297, 1173);
             this.panel1.TabIndex = 0;
+            // 
+            // lsb_resultat
+            // 
+            this.lsb_resultat.FormattingEnabled = true;
+            this.lsb_resultat.ItemHeight = 25;
+            this.lsb_resultat.Location = new System.Drawing.Point(80, 582);
+            this.lsb_resultat.Name = "lsb_resultat";
+            this.lsb_resultat.Size = new System.Drawing.Size(1187, 454);
+            this.lsb_resultat.TabIndex = 8;
             // 
             // label3
             // 
@@ -85,6 +94,7 @@
             this.btn_abfahrtsortsuche.TabIndex = 5;
             this.btn_abfahrtsortsuche.Text = "Verbindung von abfahrsortsuchen";
             this.btn_abfahrtsortsuche.UseVisualStyleBackColor = true;
+            this.btn_abfahrtsortsuche.Click += new System.EventHandler(this.btn_abfahrtsortsuche_Click);
             // 
             // btn_neuesuche
             // 
@@ -123,19 +133,14 @@
             // 
             // txt_von
             // 
+            this.txt_von.AutoCompleteCustomSource.AddRange(new string[] {
+            "Stans"});
+            this.txt_von.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.txt_von.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.txt_von.Location = new System.Drawing.Point(186, 129);
             this.txt_von.Name = "txt_von";
             this.txt_von.Size = new System.Drawing.Size(790, 31);
             this.txt_von.TabIndex = 0;
-            // 
-            // lsb_resultat
-            // 
-            this.lsb_resultat.FormattingEnabled = true;
-            this.lsb_resultat.ItemHeight = 25;
-            this.lsb_resultat.Location = new System.Drawing.Point(80, 582);
-            this.lsb_resultat.Name = "lsb_resultat";
-            this.lsb_resultat.Size = new System.Drawing.Size(1187, 454);
-            this.lsb_resultat.TabIndex = 8;
             // 
             // MainView
             // 

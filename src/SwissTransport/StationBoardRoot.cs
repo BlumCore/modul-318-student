@@ -11,6 +11,7 @@ namespace SwissTransport
 
         [JsonProperty("stationboard")]
         public List<StationBoard> Entries { get; set; }
+        public IEnumerable<Connection> ConnectionList { get; set; }
     }
 
     public class StationBoard

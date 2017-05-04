@@ -27,21 +27,17 @@ namespace Fahrplan
         {
             var connections = Testee.GetConnections(txt_von.Text, txt_nach.Text);
 
-                Connection result = connections.ConnectionList[0];
+
+        foreach(Connection result in connections.ConnectionList) {
                 ConnectionPoint from = result.From;
                 ConnectionPoint to = result.To;
-            
                 lsb_resultat.Items.Add(("Von: " + from.Station.Name + "\n"
                     + " Abfahrt: " + validateDateTime(result.From.Departure) + "\n"
                     + " Nach: " + to.Station.Name + "\n"
                     + " Ankunft:" + validateDateTime(result.To.Arrival) + "\n"
                     + " Länge der Reise " + result.Duration));
-
-            //foreach (string Departure in Abfahrt)
-           // {
-
-            //}
-            
+                Console.WriteLine(result.From.Departure);
+            }
         }
 
         private String validateDateTime(String time)
@@ -59,6 +55,27 @@ namespace Fahrplan
         {
             txt_von.Clear();
             txt_nach.Clear();
+            lsb_resultat.Items.Clear();
+        }
+
+        private void btn_abfahrtsortsuche_Click(object sender, EventArgs e)
+        {
+            testee = new Transport();
+            Stations stations = testee.GetStations(txt_von.Text);
+            Station station = stations.StationList[0];
+            String id = station.Id;
+
+            StationBoardRoot stationBoard = testee.GetStationBoard(txt_von.Text, id);
+
+            foreach (StationBoard result in stationBoard.Entries)
+                {
+
+                lsb_resultat.Items.Add(("Von: " + txt_von.Text + "\n"
+                     + " Abfahrt: " + validateDateTime(result.Stop.Departure.ToString()) + "\n"
+                     + " Nach: " + result.To));
+                    Console.WriteLine(result.Name);
+
+                }
+            }
         }
     }
-}
