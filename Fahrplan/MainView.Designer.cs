@@ -77,6 +77,7 @@
             this.txt_nach.Location = new System.Drawing.Point(242, 230);
             this.txt_nach.Name = "txt_nach";
             this.txt_nach.Size = new System.Drawing.Size(774, 33);
+            this.txt_nach.Sorted = true;
             this.txt_nach.TabIndex = 10;
             this.txt_nach.TextUpdate += new System.EventHandler(this.Txt_nach_TextUpdate);
             // 
@@ -86,6 +87,7 @@
             this.txt_von.Location = new System.Drawing.Point(242, 134);
             this.txt_von.Name = "txt_von";
             this.txt_von.Size = new System.Drawing.Size(774, 33);
+            this.txt_von.Sorted = true;
             this.txt_von.TabIndex = 9;
             this.txt_von.TextUpdate += new System.EventHandler(this.Txt_von_TextUpdate);
             // 
